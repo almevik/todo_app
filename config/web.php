@@ -65,7 +65,7 @@ $config = [
                 'notes'  => 'site/index',
                 'notes/add'  => 'site/index',
                 'notes/<id:\d+>'  => 'site/index',
-                'notes/delete/<id:\d+>'  => 'site/index',
+                'notes/edit/<id:\d+>'  => 'site/index',
 
                 [
                     'class' => 'yii\rest\UrlRule',

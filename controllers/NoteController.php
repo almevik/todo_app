@@ -15,11 +15,17 @@ class NoteController extends ActiveController
     public function init()
     {
         parent::init();
+        \Yii::$app->user->enableSession = false;
     }
 
     public function behaviors()
     {
     $behaviors = parent::behaviors();
+
+//    $behaviors['authenticator'] = [
+//        'class' => HttpBearerAuth::className(),
+//        'except' => ['options','login'],
+//	];
 
     return $behaviors;
 
