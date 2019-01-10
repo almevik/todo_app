@@ -13,6 +13,11 @@ modules:
         Yii2:
             configFile: 'config/test.php'
             cleanup: false
+        Db:
+            dsn: 'sqlite:tests/_output/temp.db'
+            user: ''
+            password: ''
+            dump: tests/_data/dump.sql
 
 # To enable code coverage:
 #coverage:
