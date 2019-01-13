@@ -9,4 +9,3 @@ modules:
       - Asserts
       - Yii2:
             part: [orm, email]
-      - Db

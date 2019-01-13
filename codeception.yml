@@ -14,8 +14,8 @@ modules:
             configFile: 'config/test.php'
             cleanup: false
         Db:
-            dsn: 'sqlite:tests/_output/temp.db'
-            user: ''
+            dsn: 'mysql:host=localhost;dbname=note2'
+            user: 'root'
             password: ''
             dump: tests/_data/dump.sql
 
