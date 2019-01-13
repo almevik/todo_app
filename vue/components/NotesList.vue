@@ -2,12 +2,12 @@
     <div class="notes">
         <h1>Список заметок</h1>
         <ul>
-            <li v-for="note in notes" :key="note.id">
+            <li v-for="(note, index) in notes" :key="note.id">
                 <a href="#" class="" @click="viewNoteDetails(note.id)">{{note.title}}</a>
                 <a href="#" class="btn btn-xs btn-primary" @click="editNote(note.id)">
                     <span class="glyphicon glyphicon-pencil"></span> Редактировать
                 </a>
-                <a href="#" class="btn btn-xs btn-danger" v-on:click="deleteNote(note.id)">
+                <a href="#" class="btn btn-xs btn-danger" v-on:click="deleteNote(note.id, index)">
                     <span class="glyphicon glyphicon-remove"></span> Удалить
                 </a>
             </li>
@@ -39,11 +39,11 @@
             editNote(id) {
                 this.$router.push('notes/edit/' + id);
             },
-            deleteNote(id) {
+            deleteNote(id, index) {
                 if (confirm("Вы уверены?")) {
                     axios.delete('/api/notes/' + id)
                         .then((response) => {
-                            this.notes.splice(this.notes.indexOf(id), 1);
+                            this.notes.splice(index, 1);
                         });
                 }
             }
